@@ -1,3 +1,6 @@
+import { useTranslation } from 'react-i18next';
+const { t, i18n } = useTranslation();
+
 const CharacterEventWish = require('../../src/models/tapestry-of-golden-flames')
 const StandardWish = require('../../src/models/wanderlust-invocation')
 const WeaponWish = require('../../src/models/epitome-invocation')

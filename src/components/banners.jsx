@@ -150,11 +150,11 @@ class Banners extends Component {
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
     return (
       <>
-        {
+        {/*{
           wasDisclaimerSeen
             ? null
             : <Modal hideModal={hideModal} />
-        }
+        }*/}
         {
           isSettingsPageVisible &&
           <Settings
@@ -217,10 +217,10 @@ class Banners extends Component {
                 >{t("Settings")}</button>
                 {/*<button
                   onClick={() => reset(selectedBanner)}
-                >{t("Reset")}</button>*/}
+                >{t("Reset")}</button>
                 <button
                   onClick={() => setView('details')}
-                >{t("Details")}</button>
+                >{t("Details")}</button>*/}
                 <button
                   onClick={() => setView('inventory')}
                 >{t("Inventory")}</button>

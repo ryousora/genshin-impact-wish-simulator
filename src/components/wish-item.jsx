@@ -19,7 +19,7 @@ function WishItem(props) {
     }}
     className={`wish-item ${type} mx-1 px-0`}>
       {
-        isNewItem && <span className="new-badge">New</span>
+        isNewItem && <span className="new-badge">新</span>
       }
       <div
       className="h-100 react-stars-container d-flex flex-column align-content-center justify-content-end pb-2">

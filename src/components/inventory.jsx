@@ -23,7 +23,8 @@ class Inventory extends Component {
   }
   calculateAmountSpent(list) {
     let wishes = list.reduce((acc, curr) => acc + curr.quantity, 0)
-    return `$${((0.0129 * 160) * wishes).toFixed(2)}`
+    //return `$${((0.0129 * 160) * wishes).toFixed(2)}`
+    return `${160 * wishes}原石`
   }
   render() {
     const { backToHome, inventory, t } = this.props
