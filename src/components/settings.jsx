@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Badge, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { withTranslation } from 'react-i18next';
 
-export default class Settings extends Component {
+export class Settings extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -43,6 +44,7 @@ export default class Settings extends Component {
     closeSettings()
   }
   renderBannerOptions() {
+    const {t} = this.props
     const bannerArray = []
     for(const banner in this.banners) {
       bannerArray.push((
@@ -50,7 +52,7 @@ export default class Settings extends Component {
           key={banner}
           value={banner}
         >
-          {this.banners[banner]}
+          {t(this.banners[banner])}
         </option>
       ))
     }
@@ -61,7 +63,8 @@ export default class Settings extends Component {
     const {
       reset,
       updateCharacterEventWish,
-      closeSettings
+      closeSettings,
+      t
     } = this.props
     return (
       <div
@@ -74,7 +77,7 @@ export default class Settings extends Component {
             <div
               onClick={closeSettings}
               className="close-button"></div>
-            <h2>Settings</h2>
+            <h2>{t("Settings")}</h2>
             <Form
             onSubmit={this.submitChanges.bind(this)}
             >
@@ -82,7 +85,7 @@ export default class Settings extends Component {
                 <Row>
                   <Col xs="12">
                     <FormGroup className="text-left">
-                      <Label for="characterBanner" className="pb-1 pl-1 h5">Character Banner</Label>
+                      <Label for="characterBanner" className="pb-1 pl-1 h5">{t("Character Banner")}</Label>
                       <Input
                         type="select"
                         name="characterBanner"
@@ -103,8 +106,8 @@ export default class Settings extends Component {
                           reset()
                           closeSettings()
                       }}
-                      type="button">Reset Inventory</button>
-                      <button>Apply Changes</button>
+                      type="button">{t("Reset Inventory")}</button>
+                      <button>{t("Apply Changes")}</button>
                     </div>
                   </Col>
                 </Row>
@@ -116,3 +119,4 @@ export default class Settings extends Component {
     )
   }
 }
+export default withTranslation()(Settings);

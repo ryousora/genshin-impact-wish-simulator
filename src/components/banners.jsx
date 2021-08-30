@@ -214,10 +214,10 @@ class Banners extends Component {
               <div className="button-container">
                 <button
                   onClick={() => this.toggleSettingsModal(true)}
-                >Settings</button>
-                <button
+                >{t("Settings")}</button>
+                {/*<button
                   onClick={() => reset(selectedBanner)}
-                >{t("Reset")}</button>
+                >{t("Reset")}</button>*/}
                 <button
                   onClick={() => setView('details')}
                 >{t("Details")}</button>
